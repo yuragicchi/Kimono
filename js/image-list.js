@@ -50,7 +50,7 @@ document.addEventListener("alpine:init", () => {
     updateUrl() {
       const params = new URLSearchParams();
       params.set("category", this.category);
-      if (this.subFilter.length > 0) params.set("subCategory", this.subFilter.join(","));
+      if (this.subFilter) params.set("subCategory", this.subFilter);
       params.set("sort", this.sort);
       history.replaceState(null, "", "?" + params.toString());
     },
